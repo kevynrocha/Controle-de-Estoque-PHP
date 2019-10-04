@@ -1,0 +1,19 @@
+{
+    "name": "estoque/estoque",
+    "description": "Sistema de controle de estoque em PHP",
+    "authors": [
+        {
+            "name": "Kevyn Rocha",
+            "email": "kevyn_oliver@hotmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Classes\\":"../classes/",
+            "Models\\":"../models/",
+            "Traits\\":"../traits/",
+        }
+    }
+}
+ 
