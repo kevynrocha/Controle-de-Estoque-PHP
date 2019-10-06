@@ -269,6 +269,10 @@ body {
 
 /*--------------------------side-footer------------------------------*/
 
+.sidebar-footer > a:hover  {
+    background-color: #c0392b;
+}
+
 .sidebar-footer {
   position: absolute;
   width: 100%;
@@ -462,7 +466,7 @@ body {
 <nav id="sidebar" class="sidebar-wrapper">
 <div class="sidebar-content">
 <div class="sidebar-brand">
-<a href="#">pro sidebar</a>
+<a href="#" >MENU</a>
 <div id="close-sidebar">
 <i class="fas fa-times"></i>
 </div>
@@ -470,57 +474,22 @@ body {
 
 <div class="sidebar-menu">
 <ul>
-<li class="header-menu">
-<span>General</span>
-</li>
 <li class="sidebar">
-<a href="#">
+<a href="main.php">
 <i class="fa fa-tachometer-alt"></i>
-<span>Dashboard</span>
+<span>Home</span>
 </a>
 </li>
 <li class="sidebar-dropdown">
 <a href="#">
 <i class="fa fa-shopping-cart"></i>
-<span>E-commerce</span>
-<span class="badge badge-pill badge-danger">3</span>
+<span>Produtos</span>
 </a>
 <div class="sidebar-submenu">
 <ul>
 <li>
-<a href="#">Products
+<a href="cadastrarProdutos.php">Cadastrar Produtos
 </a>
-</li>
-<li>
-<a href="#">Orders</a>
-</li>
-<li>
-<a href="#">Credit cart</a>
-</li>
-</ul>
-</div>
-</li>
-<li class="sidebar-dropdown">
-<a href="#">
-<i class="far fa-gem"></i>
-<span>Components</span>
-</a>
-<div class="sidebar-submenu">
-<ul>
-<li>
-<a href="#">General</a>
-</li>
-<li>
-<a href="#">Panels</a>
-</li>
-<li>
-<a href="#">Tables</a>
-</li>
-<li>
-<a href="#">Icons</a>
-</li>
-<li>
-<a href="#">Forms</a>
 </li>
 </ul>
 </div>
@@ -528,37 +497,12 @@ body {
 <li class="sidebar-dropdown">
 <a href="#">
 <i class="fa fa-chart-line"></i>
-<span>Charts</span>
+<span>Relatórios</span>
 </a>
 <div class="sidebar-submenu">
 <ul>
 <li>
-<a href="#">Pie chart</a>
-</li>
-<li>
-<a href="#">Line chart</a>
-</li>
-<li>
-<a href="#">Bar chart</a>
-</li>
-<li>
-<a href="#">Histogram</a>
-</li>
-</ul>
-</div>
-</li>
-<li class="sidebar-dropdown">
-<a href="#">
-<i class="fa fa-globe"></i>
-<span>Maps</span>
-</a>
-<div class="sidebar-submenu">
-<ul>
-<li>
-<a href="#">Google maps</a>
-</li>
-<li>
-<a href="#">Open street map</a>
+<a href="relatorioProdutos.php">Entrada e Saída de Produtos</a>
 </li>
 </ul>
 </div>
@@ -568,7 +512,7 @@ body {
 </div>
 
 <div class="sidebar-footer">
-<a href="#">
+<a href="logout.php">
 <i class="fa fa-power-off"></i>
 </a>
 </div>
@@ -576,7 +520,7 @@ body {
 
 <main class="page-content">
 <div class="container-fluid">
-<h2>Pro Sidebar</h2>
+<h2>Controle de Estoque</h2>
 <hr>
 <div class="row">
 <div class="form-group col-md-12">
