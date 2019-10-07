@@ -13,8 +13,8 @@ $senha = $_POST['senha'];
 
 $sql = ('SELECT db_nome db_senha FROM db_login WHERE db_nome=:nome and db_senha=:senha');
 
-$stmt = new ClassConexao;
-$stmt = ClassConexao::getConn()->prepare($sql);
+$stmt = new Conexao;
+$stmt = Conexao::getConn()->prepare($sql);
 $stmt->bindValue(':nome', $nome);
 $stmt->bindValue(':senha', $senha);
 $stmt->execute();

@@ -1,6 +1,6 @@
 <?php
 
-class ClassConexao {
+class Conexao {
 	private static $pdo;
 
 	public static function getConn() {

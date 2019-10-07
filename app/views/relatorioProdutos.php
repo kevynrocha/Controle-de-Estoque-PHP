@@ -1,5 +1,5 @@
 ﻿<?php require_once'../../class/header.php'; 
-      require_once'../models/ClassConexao.php'; 
+      require_once'../models/ClassConexao.php';     
 ?>
 
 <main class="page-content">
@@ -10,66 +10,38 @@
                 <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nome</th>
-                <th scope="col">Valor        </th>
+                <th scope="col">    Valor    </th>
                 <th scope="col">Quantidade</th>
-                <th scope="col">Data            </th>
+                <th scope="col">      Data      </th>
                 <th scope="col">Descrição</th>
-                <th scope="col">Ações</th>
+                <th scope="col">            Ações            </th>
                 </tr>
             </thead>
-            <tbody>
-                <?php						
+            <tbody>  
                 
-                // Bloco que realiza o papel do Read - recupera os dados e apresenta na tela
-                try {                    
+                <?php  
+                # BLOCO RESPONSÁVEL PELA LISTAGEM DOS PRODUTOS NA TELA
                     $sql = 'SELECT * FROM db_produtos';
-                    $stmt = new ClassConexao;
-                    $stmt = ClassConexao::getConn()->prepare($sql);
-                                
-                    if ($stmt->execute()) {
-                        while ($result = $stmt->fetch(PDO::FETCH_OBJ)) {
-                            echo "<tr>";
-                            
-                                echo "<td>".$result->id."</td>
-                                    <td>".$result->nome."</td>
-                                    <td>R$ ".$result->valor."</td>
-                                    <td>".$result->quantidade."</td>
-                                    <td>".$result->data."</td>
-                                    <td>".$result->descricao."</td>
-                                    <td><center>
-                                        <a href=\"?act=upd&id=".$result->id."\">[Alterar]</a>".
-                                        "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"."
-                                        <a href=\"..\controllers\ClassProdutoDelete.php?id=\">[Excluir]</a>
-                                    </center></td>";                                    
-
-                            echo "</tr>";
-                        }
-                            } else {
-                                echo "Erro: Não foi possível recuperar os dados do banco de dados";
-                            }
-                    } catch (PDOException $erro) {
-                        echo "Erro: ".$erro->getMessage();
-                    }
-                    
-                    if (isset($_POST["act"]) && $_POST["act"] == "del" && $id != "") {
-                        try {
-                            $sql = "DELETE FROM db_produtos WHERE id = ?";
-                            $stmt = ClassConexao::getConn()->prepare($sql);
-                            $stmt->bindParam(1, $id, PDO::PARAM_INT);
-                            if ($stmt->execute()) {
-                                echo "Registo foi excluído com êxito";
-                                $id = null;
-                            } else {
-                                throw new PDOException("Erro: Não foi possível executar a declaração sql");
-                            }
-                        } catch (PDOException $erro) {
-                            echo "Erro: ".$erro->getMessage();
-                        }
-                    }                    
-                ?>
+                    $stmt = Conexao::getConn()->prepare($sql);                                
+                    $stmt->execute();
+                        while ($result = $stmt->fetch(PDO::FETCH_OBJ)): ?>
+                            <tr>
+                                <td> <?= $result->id; ?>         </td>
+                                <td> <?= $result->nome; ?>       </td>
+                                <td> <?= $result->valor; ?>      </td>
+                                <td> <?= $result->quantidade; ?> </td>
+                                <td> <?= $result->data; ?>       </td>
+                                <td> <?= $result->descricao; ?>  </td>
+                                <td>
+                                    <a class="btn btn-primary btn-sm" href="../controllers/ClassProdutoUpdate.php?id=<?= $result->id ?>" >Editar</a>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a onclick="return confirm('Você tem certeza que deseja excluir?')" class="btn btn-danger btn-sm" href="../controllers/ClassProdutoDelete.php?id=<?= $result->id ?>" >Excluir</a>
+                                </td>                                    
+                            </tr>
+                <?php   endwhile;?>                    
             </tbody>
         </table>            
     </div>
 </main>
 
-<?php require_once('../../class/footer.php');  ?>
+<?php require_once'../../class/footer.php';?>

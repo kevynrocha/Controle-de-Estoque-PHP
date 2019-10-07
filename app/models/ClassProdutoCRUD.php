@@ -2,8 +2,8 @@
 
 class ProdutoCrud {	
 
-	public function Create(Produto $p) {
-		$sql = 'INSERT INTO produtos (nome, quantidade, valor, data, descricao) VALUES (?, ?, ?, ?, ?)';
+	public function create(Produto $p) {
+		$sql = 'INSERT INTO db_produtos (nome, quantidade, valor, data, descricao) VALUES (?, ?, ?, ?, ?)';
 		       
 		$stmt = Conexao::getConn()->prepare($sql);
 		$stmt->bindValue(1, $p->getNome());
@@ -14,22 +14,16 @@ class ProdutoCrud {
 		$stmt->execute(); 
 	}
 
-	public function Read() {
-		$sql = 'SELECT * FROM produtos';
+	public function read() {
+		$sql = 'SELECT * FROM db_produtos';
 
 		$stmt = Conexao::getConn()->prepare($sql);
-		$stmt->execute();
-
-		if($stmt->rowCount() > 0):
-			$resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-			return $resultado;
-		else:
-			return [];
-		endif;
+		$stmt->execute(); 
+		//$resultado = $stmt->fetchAll(PDO::FETCH_OBJ);
 	}
 
-	public function Update(Produto $p) {
-		$sql = 'UPDATE produtos SET nome = ?, descricao = ? WHERE id = ?';                 
+	public function update(Produto $p) {
+		$sql = 'UPDATE db_produtos SET nome = ?, descricao = ? WHERE id = ?';                 
 		
 		$stmt = Conexao::getConn()->prepare($sql);
 		$stmt->bindValue(1, $p->getNome());
@@ -38,14 +32,13 @@ class ProdutoCrud {
 		$stmt->execute();		 
 	}
 
-	public function Delete($id) {
+	public function delete($id) {
 
-		$sql = 'DELETE FROM produtos WHERE id = ?';
+		$sql = 'DELETE FROM db_produtos WHERE id = ?';
 
 		$stmt = Conexao::getConn()->prepare($sql);
 		$stmt->bindValue(1, $id);
 		$stmt->execute(); 
-
 	}
 }
 ?>
