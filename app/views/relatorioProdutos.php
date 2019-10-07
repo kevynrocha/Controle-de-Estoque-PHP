@@ -32,10 +32,8 @@
                                 <td> <?= $result->quantidade; ?> </td>
                                 <td> <?= $result->data; ?>       </td>
                                 <td> <?= $result->descricao; ?>  </td>
-                                <td>
-                                    <a class="btn btn-primary btn-sm" href="../controllers/ClassProdutoUpdate.php?id=<?= $result->id ?>" >Editar</a>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;
-                                    <a onclick="return confirm('Você tem certeza que deseja excluir?')" class="btn btn-danger btn-sm" href="../controllers/ClassProdutoDelete.php?id=<?= $result->id ?>" >Excluir</a>
+                                <td>                                    
+                                    <a onclick="return confirm('Você tem certeza que deseja excluir?')" class="btn btn-danger btn-block" href="../controllers/ClassProdutoDelete.php?id=<?= $result->id ?>" >Excluir</a>
                                 </td>                                    
                             </tr>
                 <?php   endwhile;?>                    

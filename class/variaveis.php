@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 $nome = $_POST['nome'];
 $quantidade = $_POST['quantidade'];
