@@ -55,6 +55,3 @@ class Produto {
 		$this->descricao = $descricao;
 	}
 }
-?>
-
-
