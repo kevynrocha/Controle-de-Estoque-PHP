@@ -17,7 +17,7 @@
             <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputAddress">Valor de Custo</label>
-                <input type="decimal" name="valor" class="form-control" id="inputAddress" placeholder="Valor de Custo">
+                <input type="number" name="valor" class="form-control" id="inputAddress" placeholder="Valor de Custo">
             </div>
             <div class="form-group col-md-6">
                 <label for="inputAddress2">Data</label>

@@ -1,7 +1,8 @@
 ﻿<?php
 
-$nome = $_POST['nome'];
+$nome = preg_replace('/[^[:alpha:]_]/', '',$_POST['nome']);
 $quantidade = $_POST['quantidade'];
 $valor = $_POST['valor'];
 $data = $_POST['data'];
-$descricao = $_POST['descricao'];
+$descricao = preg_replace('/[^[:alpha:]_]/', '',$_POST['descricao']);
+

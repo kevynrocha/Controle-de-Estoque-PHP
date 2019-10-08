@@ -1,13 +1,14 @@
-<?php session_start();  ?>
-<?php require_once('../../class/header.php');  ?>
-
+<?php session_start();?>
+<?php require_once('../../class/header.php');?>
 <main class="page-content">
     <div>
 		<h1 class="mb-4 mt-3">
             <?php
-                if(isset($_SESSION['nome'])) 
-                {echo "Bem vindo, <strong>".$_SESSION['nome']." </strong>!<br/>";} 
-                else {header('location: index.php');}
+                if(isset($_SESSION['nome'])){
+                    echo "Bem vindo, <strong>".$_SESSION['nome']." </strong>!<br/>";
+                }else {
+                    header('location: index.php');
+                }
             ?>	            
 		</h1>
 		<h3>Para que serve o controle de estoque?</h3>
