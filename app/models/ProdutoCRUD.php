@@ -6,12 +6,13 @@ class ProdutoCrud {
 		$sql = 'INSERT INTO db_produtos (nome, quantidade, valor, data, descricao) VALUES (?, ?, ?, ?, ?)';
 		       
 		$stmt = Conexao::getConn()->prepare($sql);
-		$stmt->bindValue(1, $p->getNome());
-		$stmt->bindValue(2, $p->getQuantidade());
+		$stmt->bindValue(1, $p->getNome(), PDO::PARAM_STR);
+		$stmt->bindValue(2, $p->getQuantidade(), PDO::PARAM_INT);
 		$stmt->bindValue(3, $p->getValor());
 		$stmt->bindValue(4, $p->getData());
-		$stmt->bindValue(5, $p->getDescricao());
+		$stmt->bindValue(5, $p->getDescricao(), PDO::PARAM_STR);
 		$stmt->execute(); 
+		
 	}
 
 	public function read() {

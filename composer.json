@@ -9,11 +9,10 @@
     ],
     "require": {},
     "autoload": {
-        "psr-4": {
-            "Classes\\":"../app/classes/",
-            "Models\\":"../app/models/",
-            "Controllers\\":"../app/controllers/"            
+        "psr-4": {           
+            "Class\\" : "class/",
+            "Controllers\\" : "app/controllers/",
+            "Models\\" : "app/models/"
         }
     }
 }
- 

@@ -1,8 +1,8 @@
 <?php
 session_start();
-require_once '../models/ClassProdutoCRUD.php';
-require_once '../models/ClassConexao.php';
-require_once '../models/ClassProduto.php';
+require_once '../models/ProdutoCRUD.php';
+require_once '../models/Conexao.php';
+require_once '../models/Produto.php';
 require_once '../../class/variaveis.php';
 
 $produto = new Produto();

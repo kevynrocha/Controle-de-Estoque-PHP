@@ -1,5 +1,5 @@
 ﻿<?php require_once'../../class/header.php'; 
-      require_once'../models/ClassConexao.php';     
+      require_once'../models/Conexao.php';     
 ?>
 
 <main class="page-content">
@@ -33,7 +33,7 @@
                                 <td> <?= $result->data; ?>       </td>
                                 <td> <?= $result->descricao; ?>  </td>
                                 <td>                                    
-                                    <a onclick="return confirm('Você tem certeza que deseja excluir?')" class="btn btn-danger btn-block" href="../controllers/ClassProdutoDelete.php?id=<?= $result->id ?>" >Excluir</a>
+                                    <a onclick="return confirm('Você tem certeza que deseja excluir?')" class="btn btn-danger btn-block" href="../controllers/ProdutoDelete.php?id=<?= $result->id ?>" >Excluir</a>
                                 </td>                                    
                             </tr>
                 <?php   endwhile;?>                    

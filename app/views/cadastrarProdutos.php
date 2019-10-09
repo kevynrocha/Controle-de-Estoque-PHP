@@ -3,7 +3,7 @@
 <main class="page-content">
     <div class="container-fluid">
         <h2 class="pb-3">Cadastrar Produtos</h2>
-        <form action="../controllers/ClassProdutoCreate.php" method="POST">
+        <form action="../controllers/ProdutoCreate.php" method="POST">
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputEmail4">Nome do Produto</label>
