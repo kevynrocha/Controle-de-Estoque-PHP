@@ -1,4 +1,8 @@
-﻿<?php require_once('../../class/header.php');  ?>
+﻿<?php 
+    require_once('../../class/VerificacaoLogin.php');
+    $verifica = new VerificacaoLogin();
+    require_once('../../class/header.php');
+?>
 
 <main class="page-content">
     <div class="container-fluid">

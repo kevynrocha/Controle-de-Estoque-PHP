@@ -4,8 +4,7 @@ session_start();
 require_once '../../config.php';
 
 # Limitando o acesso somente com login e senha.
-if(empty($_POST['nome']) || empty($_POST['senha']))
-	header('location:../views/index.php');
+
 
 # Autenticação do usuario e senha.
 $nome  = $_POST['nome'];
@@ -28,5 +27,5 @@ if($result == false){
 	header('location:../views/main.php');
 }
 
-# Sessão
+# Sessão com nome do usuario e letra maiuscula
 $_SESSION['nome'] = ucfirst($nome);

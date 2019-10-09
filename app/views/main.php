@@ -1,5 +1,8 @@
-<?php session_start();?>
-<?php require_once('../../class/header.php');?>
+<?php 
+    require_once('../../class/VerificacaoLogin.php');
+    $verifica = new VerificacaoLogin();
+    require_once('../../class/header.php');
+?>
 <main class="page-content">
     <div>
 		<h1 class="mb-4 mt-3">

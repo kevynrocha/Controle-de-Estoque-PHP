@@ -10,7 +10,7 @@
     "require": {},
     "autoload": {
         "psr-4": {           
-            "Class\\" : "class/",
+            "Classe\\" : "class/",
             "Controllers\\" : "app/controllers/",
             "Models\\" : "app/models/"
         }

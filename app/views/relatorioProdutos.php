@@ -1,6 +1,9 @@
-﻿<?php require_once'../../class/header.php'; 
-      require_once '../../config.php';
-      use Models\Conexao;    
+﻿<?php 
+    require_once('../../class/VerificacaoLogin.php');
+    $verifica = new VerificacaoLogin();
+    require_once'../../class/header.php'; 
+    require_once '../../config.php';
+    use Models\Conexao;    
 ?>
 
 <main class="page-content">
