@@ -1,7 +1,8 @@
 <?php
 
-require_once '..\models\ProdutoCRUD.php';
-require_once '..\models\Conexao.php';
+require_once '../../config.php';
+
+use Models\ProdutoCrud;
 
 $produtoCRUD = new ProdutoCrud();
 $produtoCRUD->delete($_GET['id']);

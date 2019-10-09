@@ -1,9 +1,10 @@
 <?php
 session_start();
-require_once '../models/ProdutoCRUD.php';
-require_once '../models/Conexao.php';
-require_once '../models/Produto.php';
+require_once '../../config.php';
 require_once '../../class/variaveis.php';
+
+use Models\Produto;
+use Models\ProdutoCRUD;
 
 $produto = new Produto();
 $produto->setNome($nome);

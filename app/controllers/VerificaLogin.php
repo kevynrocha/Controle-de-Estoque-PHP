@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once '../../index.php';
+require_once '../../config.php';
 
 # Limitando o acesso somente com login e senha.
 if(empty($_POST['nome']) || empty($_POST['senha']))

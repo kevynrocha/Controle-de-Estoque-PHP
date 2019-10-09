@@ -1,5 +1,6 @@
 ﻿<?php require_once'../../class/header.php'; 
-      require_once'../models/Conexao.php';     
+      require_once '../../config.php';
+      use Models\Conexao;    
 ?>
 
 <main class="page-content">
