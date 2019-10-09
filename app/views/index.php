@@ -9,7 +9,7 @@
 <body>    
     <section class="login">
         <h1>Login</h1>
-        <form action="../controllers/VerificaLogin.php" method="POST">
+        <form action="../controllers/Autenticacao.php" method="POST">
             <input type="text" name="nome" placeholder="Usuario" required/>
             <input type="password" name="senha" placeholder="Senha" required/>
             <button type="submit" class="btn btn-primary btn-block btn-large">Entrar.</button>
