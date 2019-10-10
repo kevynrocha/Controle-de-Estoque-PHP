@@ -12,9 +12,7 @@
         <form action="../controllers/Autenticacao.php" method="POST">
             <input type="text" name="nome" placeholder="Usuario" required/>
             <input type="password" name="senha" placeholder="Senha" required/>
-            <?php 
-                
-            ?>
+            <label style="color:red">                Usuário/Senha incorreto.</label>
             <button type="submit" class="btn btn-primary btn-block btn-large">Entrar.</button>
         </form>
     </section>   

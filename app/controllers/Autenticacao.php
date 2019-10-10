@@ -22,9 +22,9 @@ $stmt->execute();
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if($result == false){
-	header('location:../views/index.php');
+	header('location:../views/erro.php');
 }else{
-	header('location:../views/main.php');
+	header('location:../views/main.php');	
 }
 
 # Sessão com nome do usuario e letra maiuscula
