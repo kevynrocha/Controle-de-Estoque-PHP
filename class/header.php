@@ -513,7 +513,7 @@ body {
 
 <div class="sidebar-footer">
 <a href="logout.php">
-<i class="fa fa-power-off"></i>
+<i class="fa fa-power-off mt-2"></i>
 </a>
 </div>
 </nav>

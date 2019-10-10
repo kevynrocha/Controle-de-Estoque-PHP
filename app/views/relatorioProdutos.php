@@ -32,18 +32,18 @@
                             <tr>
                                 <td> <?= $result->id; ?>         </td>
                                 <td> <?= $result->nome; ?>       </td>
-                                <td> <?= number_format($result->valor, 2, ',', ' '); ?>      </td>
+                                <td> <?= 'R$ '.number_format($result->valor, 2, ',', ' '); ?>      </td>
                                 <td> <?= $result->quantidade; ?> </td>
                                 <td> <?= date("d/m/Y", strtotime($result->data));?>       </td>
                                 <td> <?= $result->descricao; ?>  </td>
-                                <td>                                    
-                                    <a onclick="return confirm('Você tem certeza que deseja excluir?')" class="btn btn-danger btn-block" href="../controllers/ProdutoDelete.php?id=<?= $result->id ?>" >Excluir</a>
-                                </td>                                    
+                                <td class="d-flex justify-content-between">
+                                    <a onclick="return confirm('Você tem certeza que deseja excluir?')" class="btn btn-warning" href="../controllers/ProdutoDelete.php?id=<?= $result->id ?>" >Editar</a>
+                                    <a onclick="return confirm('Você tem certeza que deseja excluir?')" class="btn btn-danger" href="../controllers/ProdutoDelete.php?id=<?= $result->id ?>" >Excluir</a>
+                                </td>                                
                             </tr>
-                <?php   endwhile;?>                    
+                <?php   endwhile;?>
             </tbody>
         </table>            
     </div>
 </main>
-
 <?php require_once'../../class/footer.php';?>
