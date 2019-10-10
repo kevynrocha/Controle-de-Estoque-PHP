@@ -6,7 +6,7 @@ require_once '../../config.php';
 
 use Models\ProdutoCrud;
 
-$_SESSION['mensagem'] = "Produto deletado!";
+$_SESSION['mensagem'] = "";
 
 $produtoCRUD = new ProdutoCrud();
 $produtoCRUD->delete($_GET['id']);

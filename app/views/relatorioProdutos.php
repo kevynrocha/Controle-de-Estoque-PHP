@@ -5,6 +5,13 @@
     require_once '../../config.php';
     use Models\Conexao;    
 ?>
+<?php 
+if(isset($_SESSION['mensagem'])): ?>
+        <div class="alert alert-danger text-center font-weight-bold" role="alert">
+            PRODUTO EXCLUÍDO!
+        </div>
+    <?php unset($_SESSION['mensagem']); ?>
+    <?php endif; ?>
 
 <main class="page-content">
     <div class="container-fluid">

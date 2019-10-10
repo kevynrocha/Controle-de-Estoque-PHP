@@ -5,7 +5,7 @@
 
     if(isset($_SESSION['mensagem'])): ?>
         <div class="alert alert-success text-center font-weight-bold" role="alert">
-            Produto cadastrado com sucesso!
+            PRODUTO CADASTRADO COM SUCESSO!
         </div>
     <?php unset($_SESSION['mensagem']); ?>
     <?php endif; ?>
