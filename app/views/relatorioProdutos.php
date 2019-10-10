@@ -22,7 +22,7 @@
                 </tr>
             </thead>
             <tbody>  
-                
+            
                 <?php  
                 # BLOCO RESPONSÁVEL PELA LISTAGEM DOS PRODUTOS NA TELA
                     $sql = 'SELECT * FROM db_produtos';
@@ -32,9 +32,9 @@
                             <tr>
                                 <td> <?= $result->id; ?>         </td>
                                 <td> <?= $result->nome; ?>       </td>
-                                <td> <?= $result->valor; ?>      </td>
+                                <td> <?= number_format($result->valor, 2, ',', ' '); ?>      </td>
                                 <td> <?= $result->quantidade; ?> </td>
-                                <td> <?= $result->data; ?>       </td>
+                                <td> <?= date("d/m/Y", strtotime($result->data));?>       </td>
                                 <td> <?= $result->descricao; ?>  </td>
                                 <td>                                    
                                     <a onclick="return confirm('Você tem certeza que deseja excluir?')" class="btn btn-danger btn-block" href="../controllers/ProdutoDelete.php?id=<?= $result->id ?>" >Excluir</a>
