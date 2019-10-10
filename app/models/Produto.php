@@ -5,6 +5,9 @@ namespace Models;
 class Produto {
 	private $id;
 	private $nome; 
+	private $quantidade;
+	private $valor;
+	private $data;
 	private $descricao;
 
 	public function getId() {

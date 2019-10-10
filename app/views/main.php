@@ -5,7 +5,7 @@
 ?>
 <main class="page-content">
     <div>
-		<h1 class="mb-4 mt-3">
+		<h1 class="mb-4 mt-0">
             <?php
                 if(isset($_SESSION['nome'])){
                     echo "Bem vindo, <strong>".$_SESSION['nome']." </strong>!<br/>";
@@ -25,7 +25,7 @@
 				
         <h5 class="text-muted">Existem mudanças que poderiam ser implementadas para reduzir ou eliminar totalmente os desperdícios de recursos, poupando dinheiro. O planejamento aliado a estratégias que envolvam técnicas e ferramentas certas otimizarão os processos. Assim, fazendo do controle de estoque um fator determinante para o sucesso do negócio.</h5>
         
-        <h5 class="text-muted">Sem controle de estoque eficiente, sua empresa pode ter dificuldade em identificar produtos que estão em falta ou baixa quantidade. Isso pode levar a perda de possíveis vendas. Já que, neste caso, seus potenciais clientes poderão procurar outra empresa que possua o produto desejado.</h5>
+        <h5 class="text-muted mt-0">Sem controle de estoque eficiente, sua empresa pode ter dificuldade em identificar produtos que estão em falta ou baixa quantidade. Isso pode levar a perda de possíveis vendas. Já que, neste caso, seus potenciais clientes poderão procurar outra empresa que possua o produto desejado.</h5>
 		
 	</div>
 </main>
