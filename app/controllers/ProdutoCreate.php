@@ -6,6 +6,8 @@ require_once '../../class/variaveis.php';
 use Models\Produto;
 use Models\ProdutoCRUD;
 
+$_SESSION['mensagem'] = "";
+
 $produto = new Produto();
 $produto->setNome($nome);
 $produto->setQuantidade($quantidade);

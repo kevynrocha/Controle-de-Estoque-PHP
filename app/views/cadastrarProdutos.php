@@ -1,8 +1,14 @@
 ﻿<?php 
     require_once('../../class/VerificacaoLogin.php');
     $verifica = new VerificacaoLogin();
-    require_once('../../class/header.php');
-?>
+    require_once('../../class/header.php'); 
+
+    if(isset($_SESSION['mensagem'])): ?>
+        <div class="alert alert-success text-center font-weight-bold" role="alert">
+            Produto cadastrado com sucesso!
+        </div>
+    <?php unset($_SESSION['mensagem']); ?>
+    <?php endif; ?>
 
 <main class="page-content">
     <div class="container-fluid">
@@ -31,7 +37,7 @@
                 <label for="descricao">Descrição do Produto</label>
                 <textarea class="form-control" name="descricao" id="descricao" placeholder="Descrição do Produto..." rows="5"></textarea>       
             </div>   
-          <button onclick=" alert('Cadastro realizado com sucesso')" type="submit" class="btn btn-success">     Enviar     </button>
+          <button type="submit" class="btn btn-success">     Enviar     </button>
         </form>
     </div>
 </main>
