@@ -6,12 +6,18 @@
     use Models\Conexao;    
 ?>
 <?php 
-if(isset($_SESSION['mensagem'])): ?>
+    if(isset($_SESSION['mensagem_excluir'])): ?>
         <div class="alert alert-danger text-center font-weight-bold" role="alert">
             PRODUTO EXCLUÍDO!
         </div>
-    <?php unset($_SESSION['mensagem']); ?>
-    <?php endif; ?>
+<?php unset($_SESSION['mensagem_excluir']); ?>
+<?php  
+    elseif(isset($_SESSION['mensagem_editar'])): ?> 
+        <div class="alert alert-info text-center font-weight-bold" role="alert">
+            PRODUTO EDITADO!
+        </div>
+<?php unset($_SESSION['mensagem_editar']); ?>
+<?php endif; ?>
 
 <main class="page-content">
     <div class="container-fluid">

@@ -6,9 +6,10 @@ require_once '../../class/variaveis.php';
 use Models\Produto;
 use Models\ProdutoCRUD;
 
-$_SESSION['mensagem'] = "";
+$_SESSION['mensagem_editar'] = "";
 
 $produto = new Produto();
+$produto->setID($_GET['id']);
 $produto->setNome($nome);
 $produto->setQuantidade($quantidade);
 $produto->setValor($valor);
@@ -16,6 +17,6 @@ $produto->setData($data);
 $produto->setDescricao($descricao);
 
 $produtoCRUD = new ProdutoCRUD();
-$produtoCRUD->create($produto);
+$produtoCRUD->update($produto);
 
 header('location: ../views/relatorioProdutos.php');

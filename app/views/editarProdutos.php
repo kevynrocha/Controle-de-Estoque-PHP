@@ -4,6 +4,7 @@
 <?php require_once('../../class/header.php'); ?>  
 
 <?php
+
 use Models\Conexao;
 
 $id = $_GET['id'];
@@ -13,15 +14,12 @@ $stmt = Conexao::getConn()->prepare($sql);
 $stmt->execute([':id' => $id]);
 $result = $stmt->fetch(PDO::FETCH_OBJ);
 
-$descricao_edit = $result->descricao;
-
-
 ?>
 
 <main class="page-content">
     <div class="container-fluid">
         <h2 class="pb-3">Editar Produto</h2>
-        <form action="../controllers/ProdutoUpdate.php" method="POST">
+        <form action="../controllers/ProdutoUpdate.php?id=<?= $result->id ?>" method="POST">
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="nomeProduto">Nome do Produto</label>
