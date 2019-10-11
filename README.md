@@ -1,4 +1,4 @@
-# CRUD - Primeiro Projeto
+# Controle de Estoque - Primeiro Projeto!
 
 Sistema para cadastro de produtos
 
