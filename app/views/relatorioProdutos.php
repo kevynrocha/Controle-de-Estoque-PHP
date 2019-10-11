@@ -44,7 +44,7 @@ if(isset($_SESSION['mensagem'])): ?>
                                 <td> <?= date("d/m/Y", strtotime($result->data));?>       </td>
                                 <td> <?= $result->descricao; ?>  </td>
                                 <td class="d-flex justify-content-between">
-                                    <a onclick="return confirm('Você tem certeza que deseja excluir?')" class="btn btn-info" href="../controllers/ProdutoDelete.php?id=<?= $result->id ?>" >Editar</a>
+                                    <a class="btn btn-info" href="editarProdutos.php?id=<?= $result->id ?>" >Editar</a>
                                     <a onclick="return confirm('Você tem certeza que deseja excluir?')" class="btn btn-danger" href="../controllers/ProdutoDelete.php?id=<?= $result->id ?>" >Excluir</a>
                                 </td>                                
                             </tr>
