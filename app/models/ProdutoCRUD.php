@@ -19,6 +19,16 @@ class ProdutoCrud {
 		
 	}
 
+	public function createProduto(Produto $p) {
+		$sql = 'INSERT INTO tbl_produto (produto, descricao) VALUES (?, ?)';
+		       
+		$stmt = Conexao::getConn()->prepare($sql);
+		$stmt->bindValue(1, $p->getNome(), \PDO::PARAM_STR);		
+		$stmt->bindValue(2, $p->getDescricao(), \PDO::PARAM_STR);
+		$stmt->execute(); 
+		
+	}
+
 	public function read() {
 		$sql = 'SELECT * FROM db_produtos';
 
