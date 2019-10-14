@@ -488,8 +488,13 @@ body {
 <div class="sidebar-submenu">
 <ul>
 <li>
-<a href="cadastrarProdutos.php">Cadastrar Produtos
-</a>
+<a href="cadastrarProdutos.php">Cadastrar </a>
+</li>
+<li>
+<a href="entradaProdutos.php">Entrada </a>
+</li>
+<li>
+<a href="saidaProdutos.php">Saída </a>
 </li>
 </ul>
 </div>
@@ -502,7 +507,10 @@ body {
 <div class="sidebar-submenu">
 <ul>
 <li>
-<a href="relatorioProdutos.php">Entrada e Saída de Produtos</a>
+<a href="relatorioProdutos.php">Protudos Cadastrados</a>
+</li>
+<li>
+<a href="relatorioProdutos.php">Estoque</a>
 </li>
 </ul>
 </div>
