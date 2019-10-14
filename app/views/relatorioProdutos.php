@@ -26,12 +26,9 @@
             <thead class="thead-dark text-center">
                 <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nome</th>
-                <th scope="col">    Valor    </th>
-                <th scope="col">Quantidade</th>
-                <th scope="col">      Data      </th>
+                <th scope="col">Nome</th>                
                 <th scope="col">Descrição</th>
-                <th scope="col">            Ações            </th>
+                <th scope="col">Ações</th>
                 </tr>
             </thead>
             <tbody>  
@@ -44,13 +41,10 @@
                         while ($result = $stmt->fetch(PDO::FETCH_OBJ)): ?>
                             <tr>
                                 <td> <?= $result->id; ?>         </td>
-                                <td> <?= $result->nome; ?>       </td>
-                                <td> <?= 'R$ '.number_format($result->valor, 2, ',', ' '); ?>      </td>
-                                <td> <?= $result->quantidade; ?> </td>
-                                <td> <?= date("d/m/Y", strtotime($result->data));?>       </td>
+                                <td> <?= $result->nome; ?>       </td>                                
                                 <td> <?= $result->descricao; ?>  </td>
-                                <td class="d-flex justify-content-between">
-                                    <a class="btn btn-info" href="editarProdutos.php?id=<?= $result->id ?>" >Editar</a>
+                                <td>
+                                    <a class="mr-5 ml-5 btn btn-info" href="editarProdutos.php?id=<?= $result->id ?>" >Editar</a>
                                     <a onclick="return confirm('Você tem certeza que deseja excluir?')" class="btn btn-danger" href="../controllers/ProdutoDelete.php?id=<?= $result->id ?>" >Excluir</a>
                                 </td>                                
                             </tr>

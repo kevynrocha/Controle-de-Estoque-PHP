@@ -10,7 +10,7 @@ require_once '../../config.php';
 $nome  = $_POST['nome'];
 $senha = $_POST['senha'];
 
-$sql = ('SELECT db_nome db_senha FROM db_login WHERE db_nome=:nome and db_senha=:senha');
+$sql = ('SELECT usuario senha FROM tbl_login WHERE usuario=:nome and senha=:senha');
 
 use Models\Conexao;
 $stmt = new Conexao;
