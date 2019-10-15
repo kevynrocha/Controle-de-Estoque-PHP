@@ -5,8 +5,9 @@ require_once '../../config.php';
 use Models\Produto;
 use Models\ProdutoCRUD;
 
-$nome = $_POST['nome'];
-$descricao = $_POST['descricao'];
+filter_var($nome = $_POST['nome'],FILTER_SANITIZE_SPECIAL_CHARS);
+filter_var($descricao = $_POST['$descricao'],FILTER_SANITIZE_ENCODED);
+
 
 $_SESSION['mensagem'] = "";
 

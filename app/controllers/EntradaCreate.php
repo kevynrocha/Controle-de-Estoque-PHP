@@ -5,18 +5,20 @@ require_once '../../config.php';
 use Models\Produto;
 use Models\ProdutoCRUD;
 
-$nome = $_POST['nome'];
-$descricao = $_POST['descricao'];
+filter_var($nome = $_POST['nome'],FILTER_SANITIZE_SPECIAL_CHARS);
+filter_var($quantidade = $_POST['quantidade'],FILTER_VALIDATE_INT);
+filter_var($valor = $_POST['valor'],FILTER_VALIDATE_FLOAT);
+$data = $_POST['data'];
 
 $_SESSION['mensagem'] = "";
 
 $produto = new Produto();
 $produto->setNome($nome);
-$produto->setDescricao($descricao);
+$produto->setQuantidade($quantidade);
+$produto->setValor($valor);
+$produto->setData($data);
 
 $produtoCRUD = new ProdutoCRUD();
-$produtoCRUD->createProduto($produto);
+$produtoCRUD->createEntrada($produto);
 
-var_dump($produtoCRUD);
-
-//header('location: ../views/cadastrarProdutos.php');
+header('location: ../views/entradaProdutos.php');

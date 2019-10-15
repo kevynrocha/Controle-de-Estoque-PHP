@@ -41,7 +41,7 @@
                         while ($result = $stmt->fetch(PDO::FETCH_OBJ)): ?>
                             <tr>
                                 <td> <?= $result->produto_id; ?>         </td>
-                                <td> <?= $result->produto_nome; ?>       </td>                                
+                                <td> <?= filter_var($result->produto_nome, FILTER_SANITIZE_SPECIAL_CHARS); ?>       </td>                                
                                 <td> <?= $result->produto_descricao; ?>  </td>
                                 <td class="d-flex justify-content-between">
                                     <a class=" btn btn-info" href="editarProdutos.php?id=<?= $result->produto_id ?>" >Editar</a>   

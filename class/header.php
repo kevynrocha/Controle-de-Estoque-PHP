@@ -510,7 +510,7 @@ body {
 <a href="relatorioProdutos.php">Protudos Cadastrados</a>
 </li>
 <li>
-<a href="relatorioProdutos.php">Estoque</a>
+<a href="estoqueProdutos.php">Estoque</a>
 </li>
 </ul>
 </div>

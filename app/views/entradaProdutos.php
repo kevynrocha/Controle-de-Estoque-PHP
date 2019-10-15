@@ -20,13 +20,13 @@
             <div class="form-group col-md-6">
                 <label for="">Produtos</label>
                 <?php  
-                    $sql = 'SELECT * FROM tbl_produto';
+                    $sql = 'SELECT * FROM tbl_produto ORDER BY produto_nome';
                     $stmt = Conexao::getConn()->prepare($sql);                                
                     $stmt->execute();
                     $results = $stmt->fetchAll(PDO::FETCH_OBJ); ?>
 
-                      <select class="custom-select" id="inputGroupSelect01">
-                          <option value="">Produtos...</option>
+                      <select class="custom-select" id="inputGroupSelect01" name="nome">
+                          <option value="" disabled selected>Produtos</option>
                                        
                     <?php
                     foreach ($results as $result){                                    
@@ -42,7 +42,7 @@
             <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputAddress">Valor de Entrada</label>
-                <input type="number" name="valor" class="form-control" min="1" id="inputAddress" placeholder="Valor de Entrada" required>
+                <input type="number" step="any" name="valor" class="form-control" min="1" id="inputAddress" placeholder="Valor de Entrada" required>
             </div>
             <div class="form-group col-md-6">
                 <label for="inputAddress2">Data de Entrada</label>
