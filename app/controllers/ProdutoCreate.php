@@ -21,4 +21,4 @@ $produtoCRUD->createProduto($produto);
 
 var_dump($produto);
 
-//header('location: ../views/cadastrarProdutos.php');
+header('location: ../views/cadastrarProdutos.php');

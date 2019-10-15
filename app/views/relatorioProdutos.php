@@ -21,7 +21,7 @@
 
 <main class="page-content">
     <div class="container-fluid">
-        <h2 class="pb-3">Relatório</h2>
+        <h2 class="pb-3">Produtos Cadastrados</h2>
         <table class="table table-striped table-bordered">
             <thead class="thead-dark text-center">
                 <tr>
@@ -35,18 +35,18 @@
             
                 <?php  
                 # BLOCO RESPONSÁVEL PELA LISTAGEM DOS PRODUTOS NA TELA
-                    $sql = 'SELECT * FROM db_produtos';
+                    $sql = 'SELECT * FROM tbl_produto';
                     $stmt = Conexao::getConn()->prepare($sql);                                
                     $stmt->execute();
                         while ($result = $stmt->fetch(PDO::FETCH_OBJ)): ?>
                             <tr>
-                                <td> <?= $result->id; ?>         </td>
-                                <td> <?= $result->nome; ?>       </td>                                
+                                <td> <?= $result->id_produto; ?>         </td>
+                                <td> <?= $result->produto; ?>       </td>                                
                                 <td> <?= $result->descricao; ?>  </td>
-                                <td>
-                                    <a class="mr-5 ml-5 btn btn-info" href="editarProdutos.php?id=<?= $result->id ?>" >Editar</a>
-                                    <a onclick="return confirm('Você tem certeza que deseja excluir?')" class="btn btn-danger" href="../controllers/ProdutoDelete.php?id=<?= $result->id ?>" >Excluir</a>
-                                </td>                                
+                                <td class="d-flex justify-content-between">
+                                    <a class=" btn btn-info" href="editarProdutos.php?id=<?= $result->id_produto ?>" >Editar</a>
+                                    <a onclick="return confirm('Você tem certeza que deseja excluir?')" class="btn btn-danger" href="../controllers/ProdutoDelete.php?id=<?= $result->id_produto ?>" >Excluir</a>
+                                </td>
                             </tr>
                 <?php   endwhile;?>
             </tbody>
