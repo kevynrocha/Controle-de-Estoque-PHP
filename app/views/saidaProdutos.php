@@ -12,7 +12,7 @@
 
 <main class="page-content">
     <div class="container-fluid">
-        <h2 class="pb-3">Cadastrar Produto</h2>
+        <h2 class="pb-3">Saída de Produto</h2>
         <form action="../controllers/ProdutoCreate.php" method="POST">
           <div class="form-row">
             <div class="form-group col-md-6">

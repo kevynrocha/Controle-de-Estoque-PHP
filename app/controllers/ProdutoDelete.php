@@ -11,4 +11,7 @@ $_SESSION['mensagem_excluir'] = "";
 $produtoCRUD = new ProdutoCRUD();
 $produtoCRUD->delete($_GET['id']);
 
-header('location:../views/relatorioProdutos.php');
+var_dump($_GET['id'])
+;
+
+//header('location:../views/relatorioProdutos.php');

@@ -14,11 +14,9 @@ $produto = new Produto();
 $produto->setNome($nome);
 $produto->setDescricao($descricao);
 
-
-
 $produtoCRUD = new ProdutoCRUD();
 $produtoCRUD->createProduto($produto);
 
-var_dump($produto);
+var_dump($produtoCRUD);
 
 header('location: ../views/cadastrarProdutos.php');

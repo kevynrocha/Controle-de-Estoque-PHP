@@ -9,7 +9,7 @@ use Models\Conexao;
 
 $id = $_GET['id'];
 
-$sql = 'SELECT * FROM db_produtos WHERE id=:id';
+$sql = 'SELECT * FROM tbl_produto WHERE produto_id=:id';
 $stmt = Conexao::getConn()->prepare($sql);                                
 $stmt->execute([':id' => $id]);
 $result = $stmt->fetch(PDO::FETCH_OBJ);
@@ -19,16 +19,16 @@ $result = $stmt->fetch(PDO::FETCH_OBJ);
 <main class="page-content">
     <div class="container-fluid">
         <h2 class="pb-3">Editar Produto</h2>
-        <form action="../controllers/ProdutoUpdate.php?id=<?= $result->id ?>" method="POST">
+        <form action="../controllers/ProdutoUpdate.php?id=<?= $result->produto_id ?>" method="POST">
           <div class="form-row">
             <div class="form-group col-md-12">
               <label for="nomeProduto">Nome do Produto</label>
               <input type="text"  name="nome" class="form-control" id="nomeProduto" 
-              value="<?php echo($result->nome);?>" required>
+              value="<?php echo($result->produto_nome);?>" required>
             </div>            
             <div class="form-group col-md-12">
                 <label for="descricaoProduto">Descrição do Produto</label>
-                <textarea class="form-control" name="descricao" id="descricaoProduto" rows="5"><?php echo($result->descricao);?></textarea>       
+                <textarea class="form-control" name="descricao" id="descricaoProduto" rows="5"><?php echo($result->produto_descricao);?></textarea>       
             </div>   
           <button type="submit" class="btn btn-success">     Enviar     </button>
         </form>
