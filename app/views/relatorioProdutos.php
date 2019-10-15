@@ -44,7 +44,7 @@
                                 <td> <?= $result->produto; ?>       </td>                                
                                 <td> <?= $result->descricao; ?>  </td>
                                 <td class="d-flex justify-content-between">
-                                    <a class=" btn btn-info" href="editarProdutos.php?id=<?= $result->id_produto ?>" >Editar</a>
+                                    <a class=" btn btn-info" href="editarProdutos.php?id=<?= $result->id_produto ?>" >Editar</a>   
                                     <a onclick="return confirm('Você tem certeza que deseja excluir?')" class="btn btn-danger" href="../controllers/ProdutoDelete.php?id=<?= $result->id_produto ?>" >Excluir</a>
                                 </td>
                             </tr>
