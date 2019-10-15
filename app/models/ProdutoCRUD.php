@@ -60,7 +60,7 @@ class ProdutoCrud {
 
 	public function delete($id) {
 
-		$sql = 'DELETE FROM tbl_produto WHERE id = ?';
+		$sql = 'DELETE FROM tbl_produto WHERE produto_id = ?';
 
 		$stmt = Conexao::getConn()->prepare($sql);
 		$stmt->bindValue(1, $id);

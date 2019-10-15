@@ -14,4 +14,4 @@ $produtoCRUD->delete($_GET['id']);
 var_dump($_GET['id'])
 ;
 
-//header('location:../views/relatorioProdutos.php');
+header('location:../views/relatorioProdutos.php');
