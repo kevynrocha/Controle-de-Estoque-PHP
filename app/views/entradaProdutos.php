@@ -15,21 +15,24 @@
 <main class="page-content">
     <div class="container-fluid">
         <h2 class="pb-3">Entrada de Produto</h2>
-        <form action="../controllers/ProdutoCreate.php" method="POST">
+        <form action="../controllers/EntradaCreate.php" method="POST">
           <div class="form-row">
-            <?php
-          # BLOCO RESPONSÁVEL PELA LISTAGEM DOS PRODUTOS NA TELA
-                    $sql = 'SELECT produto FROM tbl_produto ORDER BY produto';
-                    $stmt = Conexao::getConn()->prepare($sql);                                
-                    $stmt->execute(); ?>
             <div class="form-group col-md-6">
                 <label for="">Produtos</label>
+                <?php  
+                    $sql = 'SELECT * FROM tbl_produto';
+                    $stmt = Conexao::getConn()->prepare($sql);                                
+                    $stmt->execute();
+                    $results = $stmt->fetchAll(PDO::FETCH_OBJ); ?>
+
                       <select class="custom-select" id="inputGroupSelect01">
                           <option value="">Produtos...</option>
-                          <?php   while ($result = $stmt->fetch(PDO::FETCH_OBJ)): ?>
-                          <option> <?php $result->produto; ?></option>
-                          <?php   endwhile;?>
-                      </select>
+                                       
+                    <?php
+                    foreach ($results as $result){                                    
+                        echo('<option>'.$result->produto_nome.'</option>');                   
+                    } ?>                                        
+                      </select>                      
             </div>
             <div class="form-group col-md-6">
               <label for="inputPassword4">Quantidade</label>

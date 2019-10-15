@@ -17,4 +17,6 @@ $produto->setDescricao($descricao);
 $produtoCRUD = new ProdutoCRUD();
 $produtoCRUD->createProduto($produto);
 
-header('location: ../views/cadastrarProdutos.php');
+var_dump($produtoCRUD);
+
+//header('location: ../views/cadastrarProdutos.php');
